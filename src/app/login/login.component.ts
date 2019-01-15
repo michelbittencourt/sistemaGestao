@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Tile {
   color: string;
@@ -21,9 +22,13 @@ export class LoginComponent implements OnInit {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
+  }
+
+  public teste() {
+    this.router.navigate(['/'])
   }
 
 }
