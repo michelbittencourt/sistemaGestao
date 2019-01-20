@@ -1,27 +1,14 @@
-# SistemaGestao
+# Sistema Gestão feito com Angular e Angular Material
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Passos para o sistema funcionar.
 
-## Development server
+### 1. Clone o projeto
+### 2. Insira o comando npm install para instalar todas as dependências do projeto
+### 3. Coloque o comando ng serve --open para rodar em ambiente de desenvolvimento.
+### 4. Abra a janela de inspecionar (Ctrl + Shift + I), vá em application > LocalStorage > http://localhost:{porta} e insira os dados a seguir:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Key: currentUser
+#### Value: {"id":0,"nome":"Teste","sobrenome":"teste","endereco":"Rua Teste","cpf":"12345678912","email":"teste@teste.com","senha":"123456","restricao":"0"}
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### 5. Agora você pode logar na tela inicial com o CPF: 12345678912 e Senha: 123456
+### 6. Agora é só utilizar o sistema, em caso de dúvidas ou sugestões, meu email é michel.viveiros@gmail.com
