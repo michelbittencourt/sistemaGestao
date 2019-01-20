@@ -29,7 +29,7 @@ export class UsuariosComponent implements OnInit {
     console.log("Teste")
   }
 
-  searchUser($event) {
+  searchUser() {
     this.applyFilter()
   }
 
