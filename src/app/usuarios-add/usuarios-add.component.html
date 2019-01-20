@@ -1,0 +1,65 @@
+<mat-toolbar-row class="secondaryToolbar">
+  <button mat-icon-button class="btn-search" type="button" (click)="navigateBack($event)">
+    <mat-icon class="material-icons">arrow_back</mat-icon>
+  </button>
+  <span class="heading">Adicionar Usuário</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="accent" (click)="salvar()">Salvar</button>
+  <button mat-raised-button color="dark" class="btn-cancelar">Cancelar</button>
+</mat-toolbar-row>
+
+<div class="cardTable mat-elevation-z8">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile colspan="1" rowspan="4">
+      <span style="padding-left: 2vw; padding-right: 2vw">
+        <h5>Dados do Usuário</h5>
+        <div style="width: 20%; height: .6vh; background-color: #6f42c1; margin-top: 1vh; margin-bottom: 1vh; margin-left: .1vw;"></div>
+        <p>Apenas o primeiro nome é obrigatório</p>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-form-field class="example-full-width" style="width: 40%; margin: 0 auto">
+        <input matInput placeholder="Nome" [(ngModel)]="users.nome" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style="width: 40%; margin: 0 auto">
+        <input matInput placeholder="Sobrenome" [(ngModel)]="users.sobrenome" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-form-field class="example-full-width" style="width: 90%; margin: 0 auto">
+        <input matInput placeholder="Email" [(ngModel)]="users.email" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-form-field class="example-full-width" style="width: 90%; margin: 0 auto">
+        <input matInput placeholder="CPF" mask="000.000.000-00" [dropSpecialCharacters]="true" [(ngModel)]="users.cpf" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-form-field class="example-full-width" style="width: 90%; margin: 0 auto">
+        <input matInput placeholder="Endereço" [(ngModel)]="users.endereco" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="2">
+      <span style="padding-left: 2vw; padding-right: 2vw">
+        <h5>Segurança</h5>
+        <div style="width: 20%; height: .6vh; background-color: #6f42c1; margin-top: 1vh; margin-bottom: 1vh; margin-left: .1vw;"></div>
+        <p>Preencha as informações de acordo com o tipo de usuário</p>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <mat-form-field class="example-full-width" style="width: 90%; margin: 0 auto">
+        <input matInput placeholder="Senha" [(ngModel)]="users.senha" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <section class="example-section">
+        <mat-radio-group [(ngModel)]="users.restricao" [ngModelOptions]="{standalone: true}">
+          <mat-radio-button class="example-margin" value=0>Administrador</mat-radio-button>
+          &nbsp;
+          <mat-radio-button class="example-margin" value=1>Usuário</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

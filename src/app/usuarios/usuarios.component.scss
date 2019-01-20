@@ -1,0 +1,97 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+  
+  .secondaryToolbar {
+    background: rgba($color: rgb(169, 113, 236), $alpha: 1);
+  }
+
+  .searchUsers {
+    height: 100%;
+    width: 20vw;
+  }
+  
+  .btnAddUser {
+    margin-right: 1vw;
+  }
+
+  .cardTable {
+    height: 80vh;
+    width: 95%;
+    
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 2%;
+    max-height: 80vh;
+    overflow: auto;
+  }
+
+  .tableUsers {
+    width: 100%;
+    // height: 20vh;
+    // height: 100%;
+  }
+
+  .tablePadding {
+    padding-left: 1vw; 
+    padding-right: 1vw
+  }
+
+  .tableHover {
+    max-height: 10vh;
+  }
+
+  .tableHover:hover {
+    background-color: rgb(185, 185, 185);
+    cursor: pointer;
+  }
+
+  ////////////////////////// INPUT /////////////////////////////////
+.input-select {
+  width: 20%;
+  height: 100%;
+  border: 1px solid gray
+}
+
+.inner-form {
+  width: 40vw;
+  height: 100%;
+  margin-left: 1vw;
+}
+
+.input-field {
+  width: 60%;
+  height: 5vh;
+  margin-top: 1vh;
+  display: inline-block;
+  padding: 0;
+  input {
+      width: 100%;
+      height: 4.5vh;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      display: block;
+      padding-left: 1vw;
+      background-color: white;
+  }
+  button {
+      width: 20%;
+      height: 4.5vh;
+      padding-top: 3px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      mat-icon {
+          padding: 0;
+          margin: 0;
+      }
+  }
+}
+
+.input-field:nth-child(1) {
+  width: 80%
+}
+/////////////////////////////////////////////

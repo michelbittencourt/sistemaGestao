@@ -1,21 +1,32 @@
-.grid-container {
-  margin: 20px;
-}
-
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
+.content {
+  width: 100%;
+  height: 93%;
+  padding: 3vh 1vw;
+  background-color: #eee;
+  background-size: 100% 100%;
+  .cardInfo {
+    // background-color: #a871ecc5;
+    background: linear-gradient(to bottom, rgba(74, 20, 140, 0.8) 0%,#a871ecc5 100%);
+    color: white;
+    height: 15vh;
+    width: 20vw;
+    min-width: 400px;
+    display: inline-block;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding: 5px;
+    .cardHeader {
+      font-size: 6vh;
+      font-weight: 300;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      button {
+        float: right;
+        padding: 10px;
+        margin-top: -20px;
+      }
+    }
+    .cardFooter {
+      padding-top: 2vh;
+    }
+  }
 }

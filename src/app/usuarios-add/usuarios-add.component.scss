@@ -1,0 +1,39 @@
+.secondaryToolbar {
+    background: rgba($color: rgb(169, 113, 236), $alpha: 1);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+  
+.btn-search {
+    mat-icon {
+        font-weight: 700;
+        color: white;
+        font-size: 2em
+    }
+}
+
+.heading {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1.0);
+    font-size: 1.2em;
+    padding-left: 2vw;
+}
+
+.btn-cancelar {
+    background-color: rgba(51, 51, 51, 0.849);
+    color: white;
+    margin-left: 1vw; 
+}
+
+.cardTable {
+    height: 83vh;
+    width: 98%;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding: 2vh 1vw;
+    max-height: 85vh;
+    overflow: auto;
+  }

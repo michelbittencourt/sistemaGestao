@@ -1,28 +1,37 @@
-<mat-sidenav-container class="sidenav-container" *ngIf="user.length > 0">
+<mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar style="color: black">SGU</mat-toolbar>
+    <div class="lineDivider"></div>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="dashboard" class="sidemenuItem " [routerLinkActive]="['activeSidemenuItem']"><mat-icon mat-list-icon>home</mat-icon> <span matLine>Dashboard</span></a>
+      <a mat-list-item routerLink="usuarios" class="sidemenuItem" [routerLinkActive]="['activeSidemenuItem']"><mat-icon mat-list-icon>people</mat-icon><span matLine>Usuários</span></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="topToolbar">
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        class="toggleSidemenu"
+        (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>sistemaGestao</span>
+      <span>Sistema de Gestão</span>
+      <span class="spacing"></span>
+      <button mat-raised-button (click)="details()" class="btnToolbar" matTooltip="Ver dados da conta">
+          {{usuario.nome}}
+      </button>
+      <button mat-raised-button (click)="logout()" class="btnToolbar" matTooltip="Sair do Sistema">
+          <mat-icon>logout</mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+

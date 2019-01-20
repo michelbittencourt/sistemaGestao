@@ -14,21 +14,24 @@ export interface Tile {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  registerCredentials = {cpf: "", senha: ""}
+  users = [];
 
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
-
-  constructor(public router: Router) { }
+  constructor(public router: Router) { 
+    this.users = JSON.parse(localStorage.getItem("users"))
+  }
 
   ngOnInit() {
   }
 
-  public teste() {
-    this.router.navigate(['/'])
+  public login() {
+    console.log("teste")
+    for(let value in this.users) {
+      if ((this.users[value].cpf == this.registerCredentials.cpf) && (this.users[value].senha == this.registerCredentials.senha)) {
+        localStorage.setItem("currentUser", JSON.stringify(this.users[value]))
+        this.router.navigate(['/main'])
+      }
+    }
   }
 
 }

@@ -1,38 +1,76 @@
-import { AuthGuard } from './_guards/auth.guard';
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
-import { NavComponent } from './nav/nav.component';
+import { NgxMaskModule } from 'ngx-mask'
+ 
 
+import { AppComponent } from './app.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { NavComponent } from './nav/nav.component';
+import { CustomMaterialModule } from "./_core/material.module";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginLayoutComponent } from './login-layout/login-layout.component';
+import { HomeLayoutComponent } from './home-layout/home-layout.component';
+import { LoginComponent } from './login/login.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuariosAddComponent } from './usuarios-add/usuarios-add.component';
+import { UsuariosDetailsComponent } from './usuarios-details/usuarios-details.component';
+import { CpfPipe } from './_pipes/cpf.pipe';
+
+
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'login', data: { title: 'First Component' }, pathMatch: 'full' },
+  {
+    path: 'login', component: LoginLayoutComponent, data: {title: 'First Component'},
+    children: [
+      {path: '', component: LoginComponent}
+    ]
+  },
+  { path: 'main', component: HomeLayoutComponent,
+    children: [
+      { path: 'usuarios/detalhes', component: UsuariosDetailsComponent},
+      { path: 'usuarios/add', component: UsuariosAddComponent},
+      { path: 'usuarios', component: UsuariosComponent},
+      { path: 'dashboard', component: DashboardComponent},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    ],  canActivate: [ AuthGuard ]
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent,
     NavComponent,
+    LoginLayoutComponent,
+    HomeLayoutComponent,
+    DashboardComponent,
+    LoginComponent,
+    ToolbarComponent,
+    UsuariosComponent,
+    UsuariosAddComponent,
+    UsuariosDetailsComponent,
+    CpfPipe,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule
+    FormsModule,
+    NgxMaskModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      { useHash: false } // <-- debugging purposes only
+    ),
+    CustomMaterialModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

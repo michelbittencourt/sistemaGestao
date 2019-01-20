@@ -1,3 +1,21 @@
-<div class="grid-container">
-  <button (click)=teste()>Teste</button>
+<div class="bgImage"></div>
+<div class="pageContent">
+<mat-card class="cardLogin">
+  <mat-card-header class="spacing">
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-form-field class="fieldsLogin">
+        <input matInput placeholder="CPF" [(ngModel)]="registerCredentials.cpf" [ngModelOptions]="{standalone: true}" mask="000.000.000-00" [dropSpecialCharacters]="true" ng-keyup="$event.keyCode == 13 && login()" required>
+      </mat-form-field>
+      <mat-form-field class="fieldsLogin">
+        <input matInput placeholder="Senha" type="password" [(ngModel)]="registerCredentials.senha"  [ngModelOptions]="{standalone: true}" ng-keyup="$event.keyCode == 13 && login()" required >
+      </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions class="spacing">
+    <button mat-raised-button class="btnLogin" color="primary" type="submit" (click)="login()">Login</button>
+  </mat-card-actions>
+</mat-card>
+
+<div class="logo">Criado por: Michel Bittencourt</div>
 </div>
