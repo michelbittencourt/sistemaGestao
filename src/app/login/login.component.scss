@@ -41,7 +41,6 @@ mat-card-content, mat-card-actions {
 .spacing {
     padding-top: 5%;
     padding-bottom: 5%;
-    text-align: center;
 }
 
 .fieldsLogin {
@@ -64,6 +63,11 @@ mat-card-content, mat-card-actions {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
+    background-color: rgba(74, 20, 140, 0.8)
+}
+
+.btnLogin:hover {
+    background-color: rgba(50, 0, 112, 0.8)
 }
 
 .logo {
