@@ -11,4 +11,4 @@ Passos para o sistema funcionar.
 #### Value: {"id":0,"nome":"Teste","sobrenome":"teste","endereco":"Rua Teste","cpf":"12345678912","email":"teste@teste.com","senha":"123456","restricao":"0"}
 
 ### 5. Agora você pode logar na tela inicial com o CPF: 12345678912 e Senha: 123456
-### 6. Agora é só utilizar o sistema, em caso de dúvidas, meu email é michel.viveiros@gmail.com
+### 6. Agora é só utilizar o sistema, em caso de dúvidas ou sugestões, meu email é michel.viveiros@gmail.com
